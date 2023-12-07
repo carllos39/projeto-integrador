@@ -1,5 +1,4 @@
 <?php 
-require "conecta.php";
 require "lavanderia-controle.php";
 $clientes=listaCliente($conexao);
 
@@ -12,12 +11,31 @@ $clientes=listaCliente($conexao);
     <title>lista Cliente</title>
 </head>
 <body>
+<div id="header">
+
+<!-- Nav -->
+    <nav id="nav">
+        <ul>
+            <li><a href="inicio.html">Início</a></li>
+
+            <li><a href="delivery.html">Delivery</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="listaCliente.php">Lista</a></li>
+        </ul>
+    </nav>
+
+</div>
+
+</div>
+<h1>Lista de cliente</h1>
 <table>
     <tr>
         <th>Id</th>
         <th>Nome</th>
         <th>Email</th>
         <th>Telefone</th>
+        <th>Ação</th>
+        <th>Ação</th>
     </tr>
     <?php foreach ($clientes as $cliente) {?>
         <tr>
@@ -25,8 +43,8 @@ $clientes=listaCliente($conexao);
             <td><?=$cliente['nome']?></td>
             <td><?=$cliente['email']?></td>
             <td><?=$cliente['telefone']?></td>
-            <a href="atualizarCliente.php?id=<?=$cliente['id']?>">Atualizar cliente</a>
-            <a href="excluirCliente.php?id=<?=$cliente['id']?>">Excluir cliente</a>
+            <td><a href="atualizar-cliente.php?id=<?=$cliente['id']?>">Atualizar</a></td>
+            <td><a href="excluirCliente.php?id=<?=$cliente['id']?>">Excluir</a></td>
         </tr>
   <?php  } ?>
 </table>

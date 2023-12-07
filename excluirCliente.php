@@ -1,10 +1,9 @@
 <?php 
-require "conecta.php";
 require "lavanderia-controle.php";
+$id=$_GET['id'];
 
-if(excluirCliente($conexao,$id)){?>
-<p>Exclido com sucesso!</p>
-<?php }else{ ?>
-    <p>Não excluiu!</p>
-    <?php } ?>
+excluirCliente($conexao,$id);
+header("location:listaCliente.php");
+?>
+
 

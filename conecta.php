@@ -3,5 +3,9 @@ $servidor="localhost";
 $usuario="root";
 $senha="";
 $banco="lavanderia";
-$conexao="$servidor,$usuario,$senha,$banco";
+if($conexao=mysqli_connect($servidor,$usuario,$senha,$banco)){
+    echo"Cadastrado com sucesso!";
+}else{
+    echo"Não cadastrou!";
+}
 ?>
