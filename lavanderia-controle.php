@@ -25,7 +25,7 @@ function excluirCliente($conexao,$id,$tipo){
     mysqli_query($conexao,$sql) or  die(mysqli_error($conexao));
 }
 function listaCliente($conexao){
-    $sql="SELECT * FROM cliente";
+    $sql="SELECT id, nome,email,telefone,tipo FROM cliente";
 
    $resultado= mysqli_query($conexao,$sql) or  die (mysqli_error($conexao));
    return mysqli_fetch_all($resultado,MYSQLI_ASSOC);
@@ -34,6 +34,13 @@ function listarUmCliente($conexao,$id){
 $sql="SELECT * FROM cliente WHERE id=$id";
 $resultado= mysqli_query($conexao,$sql) or  die(mysqli_error($conexao));
 return mysqli_fetch_assoc($resultado);
+}
+
+function buscarCliente($conexao,$login,$senha){
+    $sql="SELECT * FROM cliente WHERE login='$login' , senha= '$senha'";
+
+    $resultado= mysqli_query($conexao,$sql) or  die(mysqli_error($conexao));
+    return mysqli_fetch_assoc($resultado);
 
 }
 ?>
