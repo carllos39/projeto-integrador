@@ -37,10 +37,11 @@ return mysqli_fetch_assoc($resultado);
 }
 
 function buscarCliente($conexao,$login,$senha){
-    $sql="SELECT * FROM cliente WHERE login='$login' , senha= '$senha'";
+    $sql="SELECT * FROM cliente WHERE login='$login' AND senha= '$senha'";
 
     $resultado= mysqli_query($conexao,$sql) or  die(mysqli_error($conexao));
-    return mysqli_fetch_assoc($resultado);
+    $cliente=mysqli_fetch_assoc($resultado);
+    return $cliente;
 
 }
 ?>
