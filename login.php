@@ -4,16 +4,24 @@ require "lavanderia-controle.php";
 require "sessao.php";
 
 $login=$_POST['login'];
-$senha=$_POST['senha'];
+$senha=password_verify($senha,$_POST['senha']);
 
 $cliente=buscarCliente($conexao, $login,$senha);
-
-if($cliente == null){
-header("location:index.php?login=0");
-}else{
+if($senha==true){
     logaCliente($cliente['login']);
     header("location:index.php?login=1");
-    
 }
-die();
-?>
+
+if($cliente == null ){ 
+logaCliente($cliente['login']);
+header("Location:index.php?login=0");
+
+header("Location:cadastro.php");
+
+ } else { 
+   
+logaCliente($cliente['login']);
+ header("location:index.php?login=1");
+ die();   
+  } ?>
+

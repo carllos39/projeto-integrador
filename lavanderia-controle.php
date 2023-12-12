@@ -1,7 +1,9 @@
 <?php 
 require "conecta.php";
 function buscarCliente($conexao,$login,$senha){
-    $sql="SELECT * FROM cliente WHERE login ='$login' AND senha = '$senha'";
+
+    // $sql="SELECT * FROM cliente WHERE login ='$login' AND senha = '$senha'";
+    $sql="SELECT * FROM cliente WHERE login ='$login'";
 
     $resultado= mysqli_query($conexao,$sql) or  die(mysqli_error($conexao));
     $cliente=mysqli_fetch_assoc($resultado);
