@@ -1,5 +1,13 @@
 <?php 
 require "conecta.php";
+function buscarCliente($conexao,$login,$senha){
+    $sql="SELECT * FROM cliente WHERE login ='$login' AND senha = '$senha'";
+
+    $resultado= mysqli_query($conexao,$sql) or  die(mysqli_error($conexao));
+    $cliente=mysqli_fetch_assoc($resultado);
+    return $cliente;
+
+}
 
 function inserirCliente($conexao,$nome,$email,$telefone,$login,$senha,$tipo){
     $sql="INSERT INTO cliente(nome,email,telefone,login,senha,tipo) VALUES('$nome','$email','$telefone','$login','$senha','$tipo')";
@@ -36,12 +44,4 @@ $resultado= mysqli_query($conexao,$sql) or  die(mysqli_error($conexao));
 return mysqli_fetch_assoc($resultado);
 }
 
-function buscarCliente($conexao,$login,$senha){
-    $sql="SELECT * FROM cliente WHERE login='$login' AND senha= '$senha'";
-
-    $resultado= mysqli_query($conexao,$sql) or  die(mysqli_error($conexao));
-    $cliente=mysqli_fetch_assoc($resultado);
-    return $cliente;
-
-}
 ?>

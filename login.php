@@ -1,9 +1,19 @@
 <?php 
 require "conecta.php";
 require "lavanderia-controle.php";
-$login=$_POST['login'];
-$senha=password_hash($_POST['senha'],PASSWORD_DEFAULT);
+require "sessao.php";
 
-$cliente=buscarCliente($conexao, $login , $senha);
-var_dump($cliente);
+$login=$_POST['login'];
+$senha=$_POST['senha'];
+
+$cliente=buscarCliente($conexao, $login,$senha);
+
+if($cliente == null){
+header("location:index.php?login=0");
+}else{
+    logaCliente($cliente['login']);
+    header("location:index.php?login=1");
+    
+}
+die();
 ?>
