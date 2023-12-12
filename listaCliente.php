@@ -1,5 +1,8 @@
 <?php 
+
 require "lavanderia-controle.php";
+require "sessao.php";
+verificaCliente();
 $clientes=listaCliente($conexao);
 
 ?>
@@ -17,10 +20,10 @@ $clientes=listaCliente($conexao);
     <nav id="nav">
         <ul>
             <li><a href="inicio.html">Início</a></li>
-
+            <li><a href="index.php">Index</a></li>
             <li><a href="delivery.html">Delivery</a></li>
-            <li><a href="cadastro.html">Cadastro</a></li>
-            <li><a href="listaCliente.php">Lista</a></li>
+            <li><a href="cadastro.php">Cadastro</a></li>
+        
         </ul>
     </nav>
 

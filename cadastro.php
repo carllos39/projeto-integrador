@@ -1,3 +1,10 @@
+<?php 
+require "conecta.php";
+require "lavanderia-controle.php";
+require "sessao.php";
+verificaCliente();
+?>
+
 <!DOCTYPE HTML>
 <html>
 	<head>

@@ -1,5 +1,6 @@
 <?php 
 require "sessao.php";
-header("location: index.php?logout=true");
+logout();
+header("Location:  index.php?logout=true");
 die();
 ?>

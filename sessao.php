@@ -1,9 +1,12 @@
 <?php 
 session_start();
+function clienteEstaLogado(){
+    return isset($_SESSION['cliente_logado']);
+}
 
-function verificaUsuario(){
+function verificaCliente(){
     if(!clienteEstaLogado()){
-        header("location:index.php?falhaDeSeguranca=true");
+        header("Location:index.php?falhaDeSeguranca=true");
         die();
     }
 }
