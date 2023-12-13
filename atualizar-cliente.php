@@ -2,7 +2,7 @@
 require "lavanderia-controle.php";
 $id=$_GET['id'];
 
-$cliente=listarUmCliente($conexao,$id);
+$cliente = listarUmCliente($conexao,$id);
 
 ?>
 <!DOCTYPE html>

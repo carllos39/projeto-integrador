@@ -19,9 +19,9 @@ $clientes=listaCliente($conexao);
 <!-- Nav -->
     <nav id="nav">
         <ul>
-            <li><a href="inicio.html">Início</a></li>
+            <li><a href="atualizar-senha.php">Atualizar </a></li>
             <li><a href="index.php">Index</a></li>
-            <li><a href="delivery.html">Delivery</a></li>
+            <li><a href="listaLogin.php">Lista de login</a></li>
             <li><a href="cadastro.php">Cadastro</a></li>
         
         </ul>
