@@ -19,6 +19,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <style>
+        h2{
+            color:green;
+        }
+    </style>
 </head>
 <body>
 <div id="page-wrapper">
@@ -42,7 +47,7 @@
 </div>
     <h1>Bem vindo!</h1>
     <?php if(clienteEstaLogado()) { ?>
-<p>Você está logado como <?=clienteLogado();?> <a href="logout.php">Deslogar</a></p>
+<h2>Você está logado como <?=clienteLogado();?> <a href="logout.php">Deslogar</a></h2>
         <?php }else{ ?>
         <h2>Login</h2>
 
@@ -55,7 +60,7 @@
         <label for="senha">Senha :</label>
         <input type="password" name="senha" id="senha">
     </div> 
-    <input type="submit" value="Logar">
+       <input type="submit" value="Logar">
 </form>
 </body>
 </html>

@@ -2,7 +2,7 @@
 require "conecta.php";
 require "lavanderia-controle.php";
 require "sessao.php";
-verificaCliente();
+
 ?>
 
 <!DOCTYPE HTML>
@@ -54,18 +54,12 @@ verificaCliente();
 		<input type="text" name="login" id="login">
 	</div>
 	<div>
-		<label for="senha">Senha :</label>
-		<input type="password" name="senha" id="senha">
+	<label for="senha">Senha :</label>
+	<input type="password" name="senha" id="senha">
 	</div>
 	<div>
-	<select name="tipo">
-		<option value=""></option>
-		<option value="visitante">visitante</option>
-		<option value="admin">admin</option>
-	</select>
-	</div>
 	<div>
-		<input type="submit">
+	<input type="submit" value="Cadastrar">
 	</div>
 </form>
 </body>

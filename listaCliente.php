@@ -37,17 +37,15 @@ $clientes=listaCliente($conexao);
         <th>Nome</th>
         <th>Email</th>
         <th>Telefone</th>
-        <th>Tipo</th>
         <th>Ação</th>
         <th>Ação</th>
     </tr>
-    <?php foreach ($clientes as $cliente) {?>
+    <?php foreach ($clientes as $cliente) { ?>
         <tr>
             <td><?=$cliente['id']?></td>
             <td><?=$cliente['nome']?></td>
             <td><?=$cliente['email']?></td>
             <td><?=$cliente['telefone']?></td>
-            <td><?=$cliente['tipo']?></td>
             <td><a href="atualizar-cliente.php?id=<?=$cliente['id']?>">Atualizar</a></td>
             <td><a href="excluirCliente.php?id=<?=$cliente['id']?>">Excluir</a></td>
         </tr>
