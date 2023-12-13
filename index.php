@@ -54,7 +54,7 @@
     <form action="login.php" method="post">
     <div>
         <label for="login">Login</label>
-        <input type="text" name="login" id="login">
+        <input type="text" name="login" id="login" auto>
     </div>
     <div>
         <label for="senha">Senha :</label>
