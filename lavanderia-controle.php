@@ -24,13 +24,10 @@ $sql="UPDATE cliente SET login='$login',senha='$senha' WHERE id=$id";
 mysqli_query($conexao,$sql) or  die (mysqli_error($conexao));
 }
 
-function excluirCliente($conexao,$id,$tipo){
-    if($tipo=='admin'){
-    $sql="DELETE FROM cliente WHERE id=$id";
-    }else{
-    $sql="DELETE FROM cliente WHERE id=$id AND $id";
-
-    }
+function excluirCliente($conexao,$id){
+    
+    $sql="DELETE FROM cliente WHERE id=$id"; 
+    
     mysqli_query($conexao,$sql) or  die(mysqli_error($conexao));
 }
 function listaCliente($conexao){
