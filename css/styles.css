@@ -1,0 +1,178 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   
+}
+
+section {
+    padding: 100px;
+}
+
+.destaque {
+    position: relative;
+    min-height: 100vh;
+    background: url(../imagens/laranja.jpg);
+    background-size: cover;
+    background-position: right;
+    /* display: flex; */
+    /* 
+    justify-content:space-between ; */
+    align-items: center;
+}
+
+.destaque h2 {
+    font-size: 3em;
+    color: rgb(26, 71, 193);
+    font-weight: 500;
+    line-height: 1.5em;
+}
+
+.destaque h2 span {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.destaque h3 {
+    font-size: 1.5em;
+    color: rgb(26, 71, 193);
+    font-weight: 500;
+}
+
+.sobre {
+    position: relative;
+    background: rgb(26, 71, 193);
+    display: inline-block;
+    color: rgb(0, 0, 0);
+    margin-top: 20px;
+    padding: 10px 30px;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+    transition: 0.5s;
+}
+
+header.sticky {
+    background: #fff;
+    padding: 20px 100px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+header .logo {
+    color: rgb(26, 71, 193);
+    font-size: 24px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+header.sticky .logo {
+    color: #111;
+}
+
+header ul {
+    position: relative;
+    display: flex;
+}
+
+header ul li {
+    position: relative;
+    list-style: none;
+}
+
+
+header ul li a {
+    position: relative;
+    display: inline-block;
+    margin: 0 15px;
+    color: rgb(26, 71, 193);
+    text-decoration: none;
+}
+
+header.sticky ul li a {
+    color: #111;
+}
+
+.cabecalho {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #111;
+}
+
+.cabecalho h2 {
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.conteudo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.conteudoBx {
+    padding-right: 30px ;
+}
+
+.conteudoBx h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.texto {
+    min-width: 50%;
+}
+
+img {
+    max-width: 100%;
+}
+
+.servicos {
+    background-color: #111;
+}
+
+.cabecalho.branco {
+    color: white;
+}
+
+.servicos .conteudo {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.servicos .conteudo .servicosBx {
+    padding: 40px 20px;
+    background-color: #222;
+    color: white;
+    max-width: 340px;
+    margin: 20px;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.servicos .conteudo .servicosBx:hover {
+    background: rgb(255, 136, 0);
+}
+
+.contato {
+    background-color: black;
+    color: white;
+}

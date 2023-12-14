@@ -14,8 +14,8 @@ function inserirCliente($conexao,$nome,$email,$telefone,$login,$senha){
     mysqli_query($conexao,$sql) or die (mysqli_error($conexao));
 }
 
-function alterarCliente($conexao,$id,$nome,$email,$telefone,$login,$senha){
-    $sql="UPDATE cliente SET nome='$nome',email='$email',telefone='$telefone',login='$login',senha='$senha', WHERE id=$id";
+function alterarCliente($conexao,$id,$nome,$email,$telefone){
+    $sql="UPDATE cliente SET nome='$nome',email='$email',telefone='$telefone' WHERE id=$id";
 
     mysqli_query($conexao,$sql) or die( mysqli_error($conexao));
 }

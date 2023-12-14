@@ -11,30 +11,22 @@ require "sessao.php";
 		<title>Lavanderia Nossa Aliada</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		
-		<noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="css3/estilo.css">
 	</head>
-	<body class="right-sidebar is-preload">
-		<div id="page-wrapper">
-
-			<!-- Header -->
-				<div id="header">
-
-					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li><a href="inicio.html">Início</a></li>
-
-								<li><a href="delivery.html">Delivery</a></li>
-								<li><a href="cadastro.html">Cadastro</a></li>
-								<li><a href="listaCliente.php">Lista</a></li>
-								<li><a href="login.php">Login</a></li>
-							</ul>
-						</nav>
-
-				</div>
-
-</div>
+	<body>
+	<header>
+        <div>
+            <h1><a href="inicio.html">Nossa Aliada</a></h1>
+            <nav>
+                <h2><a href="">Menu &equiv; </a></h2>
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href=""></a></li>
+                    <li><a href="listaCliente.php">lista Cliente</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 <h1>Cadastro de cliente</h1>
 <form action="inserirCliente.php" method="post">
 	<div>
@@ -59,7 +51,7 @@ require "sessao.php";
 	</div>
 	<div>
 	<div>
-	<input type="submit" value="Cadastrar">
+	<button type="submit">Cadastrar</button>
 	</div>
 </form>
 </body>

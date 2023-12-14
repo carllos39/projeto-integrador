@@ -1,0 +1,120 @@
+body{
+    background-image: url(../imagens/laranja.jpg);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: blue;
+    
+}
+button a{
+    color:white;
+
+}
+
+.menu a{
+    font-weight: bold;
+    color: blue;
+    text-decoration:none;
+}
+
+.menu{list-style: none}
+
+
+form{
+    max-width:;
+    margin: auto;
+    
+}
+input {
+    border:none;
+    padding: 4px;
+    height: 40px;
+    border-radius: 4px;
+
+}
+h1{
+    color: blue;
+    
+}
+
+form div{
+    /* display: flex;
+    justify-content: space-between; */
+    align-items: center;
+    margin-top: 1rem;
+}
+label{
+    font-size: 18px;
+    font-weight: bold;
+    width: 30%;
+}
+
+form div *:not(label) {
+    width: 30%;
+}
+.menu{
+    display: flex;
+    justify-content: space-between;
+}
+table{
+    width: 80%;
+    margin: auto;
+    border: solid 1px;
+}
+table, th, td{
+    border: solid 1px
+    
+}
+caption{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding-bottom: 0.5rem;
+}
+th{
+    background-color: var(--cor-escura);
+    color: var(--cor-clara);
+    border-color: var(--cor-escura);
+    padding: 0.7rem;
+}
+td{
+    padding: 0,5rem;
+}
+td:nth-child(2){text-align: center;}
+th:last-child,td:last-child{text-align: right;}
+th:first-child{text-align: left;}
+
+button{
+    background-color:blue;
+    color: white;
+    border: none;
+    font-weight: bold;
+    padding: 1rem 0.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+button:hover,button:focus {
+    background-color: var(--cor-clara);
+    color: var(--cor-escura);
+    box-shadow: var(--cor-escura) 0 0 2px;
+}
+@media (min-width:570px) {
+    nav h2 {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+    }
+
+    .menu li {
+        width: 100%;
+    }
+
+    nav {
+        width: 70%;
+    }
+
+    .front-end img{
+        height: 150px;
+    }
+
+}
