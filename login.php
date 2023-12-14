@@ -15,9 +15,6 @@ if($senha==true){
 if($cliente == null ){ 
 logaCliente($cliente['login']);
 header("Location:index.php?login=0");
-
-header("Location:cadastro.php");
-
  } else { 
    
 logaCliente($cliente['login']);

@@ -12,24 +12,22 @@ $clientes=listaCliente($conexao);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lista Cliente</title>
+    <link rel="stylesheet" href="css3/estilo.css">
 </head>
 <body>
-<div id="header">
-
-<!-- Nav -->
-    <nav id="nav">
-        <ul>
-            <li><a href="atualizar-senha.php">Atualizar </a></li>
-            <li><a href="index.php">Index</a></li>
-            <li><a href="listaLogin.php">Lista de login</a></li>
-            <li><a href="cadastro.php">Cadastro</a></li>
-        
-        </ul>
-    </nav>
-
-</div>
-
-</div>
+<header>
+        <div>
+            <h1><a href="inicio.html">Nossa Aliada</a></h1>
+            <nav>
+                <h2><a href="">Menu &equiv; </a></h2>
+                <ul class="menu">
+                    <li><a href="index.php">index</a></li>
+                    <li><a href=""></a></li>
+                    <li><a href="cadastro.php">lista Cliente</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 <h1>Lista de cliente</h1>
 <table>
     <tr>

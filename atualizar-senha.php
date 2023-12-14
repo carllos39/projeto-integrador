@@ -15,6 +15,7 @@ atualizaSenha($conexao,$id,$login,$senha);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>atualiza Senha</title>
+    <link rel="stylesheet" href="css1/estilos.css">
 </head>
 <body>
     <form action="" method="post">

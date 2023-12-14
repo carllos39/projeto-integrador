@@ -40,13 +40,6 @@ $cliente = listarUmCliente($conexao,$id);
 		<input type="text" name="senha" id="senha">
 	</div>
 	<div>
-	<select name="tipo">
-		<option value=""></option>
-		<option value="visitante">visitante</option>
-		<option value="admin">admin</option>
-	</select>
-	</div>
-	<div>
 		<input type="submit" value="atualizar">
 	</div> 
    </form> 

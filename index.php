@@ -11,6 +11,7 @@
 
     <?php if(isset($_GET['falhaDeSeguranca']) && $_GET['falhaDeSeguranca']==true){ ?> 
     <p>Você não tem acesso a essa funcionalidade!</p>
+
     <?php } ?>
 
 <!DOCTYPE html>
@@ -19,50 +20,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <style>
-        h2{
-            color:green;
-        }
-    </style>
+ <link rel="stylesheet" href="css3/estilo.css">
 </head>
 <body>
-<div id="page-wrapper">
+<header>
+        <a href="#" class="logo"> Nossa Aliada</a>
+        <ul class="menu">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="cadastro.php">Cadastrar</a></li>
+            <li><a href="#servicosnav">Serviços</a></li>
+            <li><a href="index.php">Login</a></li>
+            <li><a href=""></a></li>
+        </ul>
+    </header>
+  <h1>Bem vindo!</h1>
 
-<!-- Header -->
-    <div id="header">
+  <?php if(clienteEstaLogado()) { ?>
+  <p>Você esta logado como <b><?=clienteLogado();?></b> <button><a href="logout.php">Deslogar</a></button></p>
+  <?php }else{ ?>
 
-        <!-- Nav -->
-            <nav id="nav">
-                <ul>
-                    <li><a href="inicio.html">Início</a></li>
-                    <li><a href="index.php">Login</a></li>
-                    <li><a href="delivery.html">Delivery</a></li>
-                    <li><a href="cadastro.php">Cadastro</a></li>
-                    <li><a href="listaCliente.php">Lista</a></li>
-                </ul>
-            </nav>
-
-    </div>
-
-</div>
-    <h1>Bem vindo!</h1>
-    <?php if(clienteEstaLogado()) { ?>
-<h2>Você está logado como <?=clienteLogado();?> <a href="logout.php">Deslogar</a></h2>
-        <?php }else{ ?>
-        <h2>Login</h2>
-
-    <form action="login.php" method="post">
-    <div>
-        <label for="login">Login</label>
-        <input type="text" name="login" id="login" auto>
-    </div>
-    <div>
-        <label for="senha">Senha :</label>
-        <input type="password" name="senha" id="senha">
-    </div> 
-       <input type="submit" value="Logar">
-</form>
+  <h2>Login</h2>
+  <form action="login.php" method="post">
+ <div>
+  <label for="login">Login :</label>
+  <input type="text" name="login" id="login">
+ </div>
+ <div>
+  <label for="senha">Senha :</label>
+  <input type="text" name="senha" id="senha">
+ </div>
+ <p>
+ <button type="submit">Logar</button>
+ <button><a href="cadastro.php">Cadastre-se</a></button>
+  </p>
+  </form>
 </body>
 </html>
 <?php } ?>
-
