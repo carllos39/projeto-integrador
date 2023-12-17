@@ -1,5 +1,5 @@
  <?php
- //require "sessao.php"; 
+ require "sessao.php"; 
  require "lavanderia-controle.php";
  
  if(isset($_GET['acesso-negado'])){  
@@ -23,9 +23,11 @@
         $senha= mysqli_real_escape_String($conexao,$_POST['senha']);
 
         $cliente=buscarCliente($conexao,$email);
+       
 
-        if($cliente != null && password_verify($senha,$senha['senha'])){
-            login($cliente['id'],$cliente['nome'],$cliente['tipo']);
+        if($cliente != null && password_verify($senha, $cliente['senha'])){
+
+            login($cliente['id'], $cliente['nome'], $cliente['tipo']);
             header("Location:admin.php");
             exit;
 
@@ -52,16 +54,15 @@
         <ul class="menu">
             <li><a href="index.html">Início</a></li>
             <li><a href="cadastro.php">Cadastrar</a></li>
-            <li><a href="#servicosnav">Serviços</a></li>
-            <li><a href="index.php">Login</a></li>
-            <li><a href=""></a></li>
-        </ul>
+            <li><a href="clientes.php">lista Cliente</a></li>
+        </ul> 
     </header>
   <h1>Bem vindo!</h1>
   <h2>Login</h2>
-  <form action="login.php" method="post" autocomplete="off">
+  <form action="" method="post" autocomplete="off">
     <?php if(isset($mensagem)){?>
         <p><?=$mensagem?></p>
+        <?php } ?>
  <div>
   <label for="email">Email :</label>
   <input type="text" name="email" id="email" requerid>
@@ -71,10 +72,9 @@
   <input type="text" name="senha" id="senha" requerid>
  </div>
  <p>
- <button type="submit">Entrar</button>
+ <button type="submit" name="entrar">Entrar</button>
  <button><a href="cadastro.php">Cadastre-se</a></button>
   </p>
   </form>
 </body>
 </html>
-<?php } ?>

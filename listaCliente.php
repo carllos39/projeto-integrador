@@ -33,8 +33,8 @@ $clientes=listaCliente($conexao);
     <tr>
         <th>Id</th>
         <th>Nome</th>
-        <th>Email</th>
-        <th>Telefone</th>
+        <th>telefone</th>
+        <th>pedido</th>
         <th>Ação</th>
         <th>Ação</th>
     </tr>
@@ -42,8 +42,8 @@ $clientes=listaCliente($conexao);
         <tr>
             <td><?=$cliente['id']?></td>
             <td><?=$cliente['nome']?></td>
-            <td><?=$cliente['email']?></td>
             <td><?=$cliente['telefone']?></td>
+            <td><?=$cliente['pedido']?></td>
             <td><a href="atualizar-cliente.php?id=<?=$cliente['id']?>">Atualizar</a></td>
             <td><a href="excluirCliente.php?id=<?=$cliente['id']?>">Excluir</a></td>
         </tr>
