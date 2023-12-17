@@ -18,6 +18,19 @@ atualizaSenha($conexao,$id,$login,$senha);
     <link rel="stylesheet" href="css1/estilos.css">
 </head>
 <body>
+<header>
+        <div>
+            <h1><a href="inicio.html">Nossa Aliada</a></h1>
+            <nav>
+                <h2><a href="">Menu &equiv; </a></h2>
+                <ul class="menu">
+                    <li><a href="index.php">index</a></li>
+                    <li><a href=""></a></li>
+                    <li><a href="listaCliente.php">lista Cliente</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
     <form action="" method="post">
     <div>
             <label for="id">Id</label>

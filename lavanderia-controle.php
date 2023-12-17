@@ -62,13 +62,16 @@ return mysqli_fetch_assoc($resultado);
 }
 function lerCliente($conexao,$id,$tipo){
     if($tipo=="admin"){
-    $sql="SELECT id,nome,email,tipo FROM cliente ORDER BY nome";
+    $sql="SELECT id,nome,telefone,pedido,email,tipo FROM cliente ORDER BY nome";
     }else{
-        $sql="SELECT id,nome,email,tipo FROM cliente WHERE id=$id";
+        $sql="SELECT id,nome,telefone,pedido,email,tipo FROM cliente WHERE id=$id";
     }
     $resultado=mysqli_query($conexao,$sql) or die(mysqli_error($conexao));
     return mysqli_fetch_all($resultado,MYSQLI_ASSOC);
-
 }
+ function dataFormatada($pedido){
+$dataFormatada=date("d/m/Y", strtotime($pedido));
+return $dataFormatada;
+ }
 
 ?>

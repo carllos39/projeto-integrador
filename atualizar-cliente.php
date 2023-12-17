@@ -11,7 +11,9 @@ $telefone=$_POST['telefone'];
 $pedido=$_POST['pedido'];
 $email=$_POST['email'];
 $senha=password_hash( $_POST['senha'],PASSWORD_DEFAULT);
+if($tipo=="admin"){
 $tipo=$_POST['tipo'];
+}
 alterarCliente($conexao,$id,$nome,$telefone,$pedido,$email,$senha,$tipo);
 header("location:listaCliente.php");
 }
@@ -22,13 +24,30 @@ header("location:listaCliente.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>atualizar Cliente</title>
+	<link rel="stylesheet" href="css3/estilo.css">
 </head>
 <body>
+<header>
+        <div>
+            <h1><a href="inicio.html">Nossa Aliada</a></h1>
+            <nav>
+                <h2><a href="">Menu &equiv; </a></h2>
+                <ul class="menu">
+                    <li><a href="index.html">index</a></li>
+                    <li><a href="logo.php">Login</a></li>
+					<li><a href="cadastro.php">Cadastro</a></li>
+                    <li><a href="clientes.php">lista Cliente</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
     <h1>atualizar Cliente</h1>
    <form action="" method="post">
-   <div>
+        <div>  
 		<label for="id">Id :</label>
-		<input value="<?=$id?>" type="text" name="id" id="id">
+		<input value="<?=$id?>" type="text" name="id" id="id" size="3">
+    </div>
+
 		<div>
 		<label for="nome">Nome :</label>
 		<input type="text" name="nome" id="nome">
@@ -53,12 +72,15 @@ header("location:listaCliente.php");
 		<select name="tipo" id="tipo">
 			<option value=""></option>
 			<option value="visitante">visitante</option>
-			<option value="admin"></option>
+			<?php if($tipo=="admin"){?>
+			<option value="admin">administador</option>
+			  <?php } ?>
+			
 		</select>
 	</div>
-	<div>
+	
 		<button type="submit" namer="atualizar">Atualizar</button>
-	</div> 
+
    </form> 
 </body>
 </html>

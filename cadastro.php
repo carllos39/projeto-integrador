@@ -32,9 +32,9 @@ header("Location:index.php");
             <nav>
                 <h2><a href="">Menu &equiv; </a></h2>
                 <ul class="menu">
-                    <li><a href="index.php">index</a></li>
-                    <li><a href=""></a></li>
-                    <li><a href="listaCliente.php">lista Cliente</a></li>
+                    <li><a href="index.html">index</a></li>
+					<li><a href="logo.php">Login</a></li>
+                    <li><a href="clientes.php">lista Cliente</a></li>
                 </ul>
             </nav>
         </div>
@@ -68,9 +68,9 @@ header("Location:index.php");
 			<option value="admin">admin</option>
 		</select>
 	</div>
-	<div>
+	
 	<button type="submit" name="cadastrar">Cadastrar</button>
-	</div>
+
 </form>
 </body>
 </html>

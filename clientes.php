@@ -1,10 +1,12 @@
 <?php
 require "sessao.php"; 
 require "lavanderia-controle.php";
-VerificaAcesso();
+
 $id=$_SESSION['id'];
 
 $tipo=$_SESSION['tipo'];
+
+
 
 $clientes=lerCliente($conexao,$id,$tipo);
 
@@ -20,13 +22,12 @@ $clientes=lerCliente($conexao,$id,$tipo);
 </head>
 <body>
 <header>
-        <a href="#" class="logo"> Nossa Aliada</a>
+<h1><a href="#" class="logo"> Nossa Aliada</a></h1>
         <ul class="menu">
             <li><a href="index.html">Início</a></li>
             <li><a href="logo.php">Login</a></li>
             
-            <li><a href="index.php">Login</a></li>
-            <li><a href=""></a></li>
+            <li><a href="clientes.php">Lista</a></li>
         </ul>
     </header>
     <h2>Cliente</h2>
@@ -39,6 +40,8 @@ $clientes=lerCliente($conexao,$id,$tipo);
     <table>
         <tr>
             <th>Nome</th>
+            <th>Telefone</th>
+            <th>Pedido</th>
             <th>Email</th>
             <th>Tipo</th>
             <th>Ação</th>
@@ -47,6 +50,8 @@ $clientes=lerCliente($conexao,$id,$tipo);
      <?php foreach ($clientes as $cliente) {?>
         <tr>
             <td><?=$cliente['nome']?></td>
+            <td><?=$cliente['telefone']?></td>
+            <td><?=dataFormatada($cliente['pedido'])?></td>
             <td><?=$cliente['email']?></td>
             <td><?=$cliente['tipo']?></td>
             <td><a href="atualizar-cliente.php?id=<?=$cliente['id']?>">Atualizar</a></td>

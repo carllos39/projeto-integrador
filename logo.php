@@ -50,7 +50,7 @@
 </head>
 <body>
 <header>
-        <a href="#" class="logo"> Nossa Aliada</a>
+<h1><a href="#" class="logo"> Nossa Aliada</a></h1>
         <ul class="menu">
             <li><a href="index.html">Início</a></li>
             <li><a href="cadastro.php">Cadastrar</a></li>
