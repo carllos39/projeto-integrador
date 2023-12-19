@@ -19,7 +19,7 @@ button a{
 
 
 form{
-    max-width:;
+    
     margin: auto;
     
 }
@@ -31,7 +31,8 @@ input {
 
 }
 h1{
-    color: blue;
+    color:blue;
+    font-weight: bold;
     
 }
 

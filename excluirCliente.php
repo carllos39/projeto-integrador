@@ -1,8 +1,13 @@
 <?php 
+require "sessao.php";
 require "lavanderia-controle.php";
-$id=$_GET['id'];
+VerificaAcesso();
 
-excluirCliente($conexao,$id);
+$id=$_GET['id'];
+$id=$_SESSION['id'];
+$$tipo=$_SESSION['tipo'];
+
+excluirCliente($conexao,$id,$tipo);
 header("location:listaCliente.php");
 ?>
 

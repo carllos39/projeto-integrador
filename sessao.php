@@ -1,24 +1,32 @@
 <?php 
-session_start();
-function clienteEstaLogado(){
-    return isset($_SESSION['cliente_logado']);
+//Verifica se já existe uma sessão
+if(!isset($_SESSION)){
+    session_start();
 }
-
-function verificaCliente(){
-    if(!clienteEstaLogado()){
-        header("Location:index.php?falhaDeSeguranca=true");
-        die();
+function VerificaAcesso(){
+    //Significa ele não está logado
+    if(!isset( $_SESSION['id'])){
+//Portanto destrua os dados de sessão e redireciona para a página de login
+      session_destroy();
+      header("Location:logo.php?acesso-negado");
+      exit;
     }
 }
-
-function clienteLogado(){
-    return $_SESSION["cliente_logado"];
-}
-
-function logaCliente($login){
-    $_SESSION['cliente_logado']=$login;
+//Cria a variável de sessão
+function login($id,$nome,$tipo){
+    $_SESSION['id']=$id;
+    $_SESSION['nome']=$nome;
+    $_SESSION['tipo']=$tipo;
 }
 function logout(){
     session_destroy();
+    header("Location:logo.php?sair");
+    exit;
+}
+function verificarTipo(){
+    if($_SESSION['tipo' !='admin']){
+        header("Location:nao-autorizado.php");
+        exit;
+    }
 }
 ?>

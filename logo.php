@@ -1,18 +1,42 @@
  <?php
  require "sessao.php"; 
- ?>
-<?php if(isset($_GET['logout']) && $_GET['logout']==true){ ?> 
-    <p>Deslogado com sucesso!</p>
-    <?php } ?>
+ require "lavanderia-controle.php";
+ 
+ if(isset($_GET['acesso-negado'])){  
+   $mensagem="Você deve se logar primeiro!"; 
+  }elseif(isset($_GET['dados-incorretos'])){  
+        $mensagem="Dados incorretos,verifique!";
+     }elseif(isset($_GET['sair'])){
+        $mensagem="Você saiu do sistema!";
+     }elseif(isset($_GET['campos-obrigatorio'])){ 
+        $mensagem="Preencha o email e senha!";
+    }
 
-    <?php if(isset($_GET['login']) && $_GET['login']==false){ ?> 
-    <p>Usuário ou senha inválida!</p>
-    <?php } ?>
+    if(isset($_POST['entrar'])){
+        if(empty($_POST['email'])|| empty($_POST['senha'])){
+            header("Location:logo.php?campos-obrigatorios");
+            exit;
+        }
+        $email = mysqli_real_escape_String($conexao,$_POST['email']);
+        $senha= mysqli_real_escape_String($conexao,$_POST['senha']);
 
-    <?php if(isset($_GET['falhaDeSeguranca']) && $_GET['falhaDeSeguranca']==true){ ?> 
-    <p>Você não tem acesso a essa funcionalidade!</p>
+        $cliente=buscarCliente($conexao,$email);
+       
 
-    <?php } ?>
+        if($cliente != null && password_verify($senha, $cliente['senha'])){
+
+            login($cliente['id'], $cliente['nome'], $cliente['tipo']);
+            header("Location:admin.php");
+            exit;
+
+        }else{
+            header("Location:logo.php?dados-incorretos");
+            exit;
+        }
+
+        }
+    
+     ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,35 +48,32 @@
 </head>
 <body>
 <header>
-        <h1><a href="#" class="logo"> Nossa Aliada</a></h1>
+<h1><a href="#" class="logo"> Nossa Aliada</a></h1>
         <ul class="menu">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">Início</a></li>
             <li><a href="cadastro.php">Cadastrar</a></li>
-            <li><a href="listaCliente.php">lista</a></li>
-            <li><a href=""></a></li>
-        </ul>
+            <li><a href="clientes.php">lista Cliente</a></li>
+            <li><a href="logo.php">Sair</a></li>
+        </ul> 
     </header>
-  <h2>Bem vindo!</h2>
-
-  <?php if(clienteEstaLogado()) { ?>
-  <p>Você esta logado como <b><?=clienteLogado();?></b> <button><a href="logout.php">Deslogar</a></button></p>
-  <?php }else{ ?>
-
+  <h1>Bem vindo!</h1>
   <h2>Login</h2>
-  <form action="login.php" method="post">
+  <form action="" method="post" autocomplete="off">
+    <?php if(isset($mensagem)){?>
+        <p><?=$mensagem?></p>
+        <?php } ?>
  <div>
-  <label for="login">Login :</label>
-  <input type="text" name="login" id="login">
+  <label for="email">Email :</label>
+  <input type="text" name="email" id="email" requerid>
  </div>
  <div>
   <label for="senha">Senha :</label>
-  <input type="text" name="senha" id="senha">
+  <input type="password" name="senha" id="senha" requerid>
  </div>
  <p>
- <button type="submit">Logar</button>
+ <button type="submit" name="entrar">Entrar</button>
  <button><a href="cadastro.php">Cadastre-se</a></button>
   </p>
   </form>
 </body>
 </html>
-<?php } ?>
