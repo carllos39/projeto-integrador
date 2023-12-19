@@ -3,7 +3,6 @@ require "conecta.php";
 require "lavanderia-controle.php";
 require "sessao.php";
 
-
 if(isset($_POST['cadastrar'])){
 $nome=$_POST['nome'];
 $telefone=$_POST['telefone'];
@@ -68,9 +67,7 @@ header("Location:index.php");
 			<option value="admin">admin</option>
 		</select>
 	</div>
-	
 	<button type="submit" name="cadastrar">Cadastrar</button>
-
 </form>
 </body>
 </html>

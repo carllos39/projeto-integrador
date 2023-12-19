@@ -20,6 +20,8 @@ function login($id,$nome,$tipo){
 }
 function logout(){
     session_destroy();
+    header("Location:logo.php?sair");
+    exit;
 }
 function verificarTipo(){
     if($_SESSION['tipo' !='admin']){

@@ -1,6 +1,10 @@
 <?php
 require "sessao.php"; 
 require "lavanderia-controle.php";
+VerificaAcesso();
+if(isset($_GET['sair'])){
+    logout();
+}
 
 $id=$_SESSION['id'];
 
@@ -9,6 +13,7 @@ $tipo=$_SESSION['tipo'];
 
 
 $clientes=lerCliente($conexao,$id,$tipo);
+
 
 ?>
 
@@ -28,11 +33,12 @@ $clientes=lerCliente($conexao,$id,$tipo);
             <li><a href="logo.php">Login</a></li>
             
             <li><a href="clientes.php">Lista</a></li>
+            <li><a href="logo.php">Sair</a></li>
         </ul>
     </header>
     <h2>Cliente</h2>
     <span>
-      <p><b>Quantidade de cliente <?=count($clientes)?> cadastrado<?php if($clientes >1 ) echo"s" ?> <b></p>
+      <p><b>Quantidade de cliente <?=count($clientes)?> cadastrado<?php if($clientes>1 ) echo"s"?> <b></p>
     
     </span>
 

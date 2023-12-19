@@ -4,11 +4,9 @@
  
  if(isset($_GET['acesso-negado'])){  
    $mensagem="Você deve se logar primeiro!"; 
- } 
-
-     if(isset($_GET['dados-incorretos'])){  
+  }elseif(isset($_GET['dados-incorretos'])){  
         $mensagem="Dados incorretos,verifique!";
-     }elseif(isset($_GET['saiu'])){
+     }elseif(isset($_GET['sair'])){
         $mensagem="Você saiu do sistema!";
      }elseif(isset($_GET['campos-obrigatorio'])){ 
         $mensagem="Preencha o email e senha!";
@@ -55,6 +53,7 @@
             <li><a href="index.html">Início</a></li>
             <li><a href="cadastro.php">Cadastrar</a></li>
             <li><a href="clientes.php">lista Cliente</a></li>
+            <li><a href="logo.php">Sair</a></li>
         </ul> 
     </header>
   <h1>Bem vindo!</h1>
