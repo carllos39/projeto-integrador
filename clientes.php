@@ -33,7 +33,7 @@ $clientes=lerCliente($conexao,$id,$tipo);
             <li><a href="logo.php">Login</a></li>
             
             <li><a href="clientes.php">Lista</a></li>
-            <li><a href="logo.php">Sair</a></li>
+            <li><a href="logo.php?sair">Sair</a></li>
         </ul>
     </header>
     <h2>Cliente</h2>

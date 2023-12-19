@@ -53,7 +53,7 @@
             <li><a href="index.html">Início</a></li>
             <li><a href="cadastro.php">Cadastrar</a></li>
             <li><a href="clientes.php">lista Cliente</a></li>
-            <li><a href="logo.php">Sair</a></li>
+            <li><a href="logo.php?sair">Sair</a></li>
         </ul> 
     </header>
   <h1>Bem vindo!</h1>
