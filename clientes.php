@@ -32,7 +32,8 @@ $clientes=lerCliente($conexao,$id,$tipo);
     </header>
     <h2>Cliente</h2>
     <span>
-        <?=count($clientes)?>
+      <p><b>Quantidade de cliente <?=count($clientes)?> cadastrado<?php if($clientes >1 ) echo"s" ?> <b></p>
+    
     </span>
 
     <p>Inserir novo Cliente</p>
@@ -49,6 +50,7 @@ $clientes=lerCliente($conexao,$id,$tipo);
         </tr>
      <?php foreach ($clientes as $cliente) {?>
         <tr>
+            
             <td><?=$cliente['nome']?></td>
             <td><?=$cliente['telefone']?></td>
             <td><?=dataFormatada($cliente['pedido'])?></td>

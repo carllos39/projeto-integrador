@@ -1,8 +1,14 @@
 <?php
+
 require "lavanderia-controle.php";
 $id=$_GET['id'];
 
+
+
+
 $cliente = listarUmCliente($conexao,$id);
+
+$id=$_GET['id'];
 if(isset($_POST['atualizar'])){
 
 $id=$_POST['id'];
@@ -11,9 +17,7 @@ $telefone=$_POST['telefone'];
 $pedido=$_POST['pedido'];
 $email=$_POST['email'];
 $senha=password_hash( $_POST['senha'],PASSWORD_DEFAULT);
-if($tipo=="admin"){
 $tipo=$_POST['tipo'];
-}
 alterarCliente($conexao,$id,$nome,$telefone,$pedido,$email,$senha,$tipo);
 header("location:listaCliente.php");
 }
@@ -79,7 +83,7 @@ header("location:listaCliente.php");
 		</select>
 	</div>
 	
-		<button type="submit" namer="atualizar">Atualizar</button>
+		<button type="submit" name="atualizar">Atualizar</button>
 
    </form> 
 </body>

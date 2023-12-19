@@ -69,7 +69,7 @@
  </div>
  <div>
   <label for="senha">Senha :</label>
-  <input type="text" name="senha" id="senha" requerid>
+  <input type="password" name="senha" id="senha" requerid>
  </div>
  <p>
  <button type="submit" name="entrar">Entrar</button>

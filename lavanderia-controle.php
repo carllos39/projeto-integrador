@@ -9,35 +9,21 @@ function buscarCliente($conexao,$email){
 
 }
 
-function inserirCliente($conexao,$nome,$telefone,$pedido,$email,$senha,$tipo){
-    $sql="INSERT INTO cliente(nome,telefone,pedido,email,senha,tipo) VALUES('$nome','$telefone','$pedido','$email','$senha','$tipo')";
-    mysqli_query($conexao,$sql) or die (mysqli_error($conexao));
-}
-
 function alterarCliente($conexao,$id,$nome,$telefone,$pedido,$email,$senha,$tipo){
     if($tipo=="admin"){
     $sql="UPDATE cliente SET nome='$nome',telefone='$telefone',pedido='$pedido',email='$email',senha='$senha',tipo='$tipo' WHERE id=$id";
     }else{
-    $sql="UPDATE cliente SET nome='$nome',telefone='$telefone',pedido='$pedido',email='$email',senha='$senha',tipo='$tipo' WHERE id=$id AND cliente=$id";
+    $sql="UPDATE cliente SET nome='$nome',telefone='$telefone',pedido='$pedido',email='$email',senha='$senha',tipo='$tipo' WHERE id=$id AND $id";
     }
 
     mysqli_query($conexao,$sql) or die( mysqli_error($conexao));
 }
 
-function atualizaSenha($conexao,$id,$login,$senha,$tipo){
+function excluirCliente($conexao,$idcliente){
     if($tipo=="admin"){
-    $sql="UPDATE cliente SET login='$login',senha='$senha',tipo='$tipo' WHERE id=$id";
+    $sql="DELETE FROM cliente WHERE id=$idcliente"; 
     }else{
-    $sql="UPDATE cliente SET login='$login',senha='$senha',tipo='$tipo' WHERE id=$id AND cliente=$id";
-    }
-mysqli_query($conexao,$sql) or  die (mysqli_error($conexao));
-}
-
-function excluirCliente($conexao,$id,$tipo){
-    if($tipo=="admin"){
-    $sql="DELETE FROM cliente WHERE id=$id"; 
-    }else{
-        $sql="DELETE FROM cliente WHERE id=$id AND cliente=$id"; 
+        $sql="DELETE FROM cliente WHERE id=$idcliente AND $idcliente"; 
 
     }
     mysqli_query($conexao,$sql) or  die(mysqli_error($conexao));
