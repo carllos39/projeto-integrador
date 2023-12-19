@@ -8,6 +8,13 @@ function buscarCliente($conexao,$email){
     return $cliente;
 
 }
+function inserirCliente($conexao,$nome,$telefone,$pedido,$email,$senha,$tipo){
+    
+ $sql="INSERT INTO cliente(nome,telefone,pedido,email,senha,tipo) VALUES('$nome','$telefone','$pedido','$email','$senha','$tipo')";
+
+ mysqli_query($conexao,$sql) or die( mysqli_error($conexao));
+    }    
+
 
 function alterarCliente($conexao,$id,$nome,$telefone,$pedido,$email,$senha,$tipo){
     if($tipo=="admin"){
@@ -19,7 +26,7 @@ function alterarCliente($conexao,$id,$nome,$telefone,$pedido,$email,$senha,$tipo
     mysqli_query($conexao,$sql) or die( mysqli_error($conexao));
 }
 
-function excluirCliente($conexao,$idcliente){
+function excluirCliente($conexao,$idcliente,$tipo){
     if($tipo=="admin"){
     $sql="DELETE FROM cliente WHERE id=$idcliente"; 
     }else{
@@ -29,7 +36,7 @@ function excluirCliente($conexao,$idcliente){
     mysqli_query($conexao,$sql) or  die(mysqli_error($conexao));
 }
 
-function listaCliente($conexao,$id){
+function listaCliente($conexao,$id,$tipo){
     if($tipo=="admin"){
     $sql="SELECT id, nome,email,telefone,login,senha FROM cliente";
     }else{
