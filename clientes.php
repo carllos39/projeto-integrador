@@ -38,11 +38,9 @@ $clientes=lerCliente($conexao,$id,$tipo);
     </header>
     <h2>Cliente</h2>
     <span>
-      <p><b>Quantidade de cliente <?=count($clientes)?> cadastrado<?php if($clientes>1 ) echo"s"?> <b></p>
+      <p><b>Quantidade de cliente <?=count($clientes)?> cadastrado<?php if($clientes>1 )echo"s"?> <b></p>
     
     </span>
-
-    <p>Inserir novo Cliente</p>
 
     <table>
         <tr>

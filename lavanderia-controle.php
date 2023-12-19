@@ -8,8 +8,7 @@ function buscarCliente($conexao,$email){
     return $cliente;
 
 }
-function inserirCliente($conexao,$nome,$telefone,$pedido,$email,$senha,$tipo){
-    
+function inserirCliente($conexao,$nome,$telefone,$pedido,$email,$senha,$tipo){ 
  $sql="INSERT INTO cliente(nome,telefone,pedido,email,senha,tipo) VALUES('$nome','$telefone','$pedido','$email','$senha','$tipo')";
 
  mysqli_query($conexao,$sql) or die( mysqli_error($conexao));

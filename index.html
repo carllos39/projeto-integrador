@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lavanderia Nossa Aliada </title>
-    
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/rodape.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 
@@ -12,16 +13,15 @@
 <body>
     <header>
         <a href="#" class="logo"> Nossa Aliada</a>
-        <div class="toggle"></div>
-        <ul>
-            <li><a href="">Início</a></li>
-            <li><a href="#sobrenav">Sobre nós</a></li>
-            <li><a href="#servicosnav">Serviços</a></li>
-            <li><a href="index.php">Login</a></li>
-            <li><a href="logo.php">Login</a></li>
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul class="menu">
+            <li><a href="#inicio"  onclick="toggleMenu();">Início</a></li>
+            <li><a href="#sobrenav" onclick="toggleMenu();">Sobre nós</a></li>
+            <li><a href="#servicosnav" onclick="toggleMenu();">Serviços</a></li>
+            <li><a href="logo.php" onclick="toggleMenu();">Login</a></li>
         </ul>
     </header>
-    <section class="destaque">
+    <section id="inicio" class="destaque">
         <div class="textBx">
             <h2>Lavanderia <br><span>Nossa Aliada</span></h2>
             <h3>Para facilitar seu dia</h3>
@@ -53,7 +53,7 @@
                 <p>Lavamos sua roupa da forma que for preciso</p>
             </div>
             <div class="servicosBx">
-                <img src="imagens/maquina-de-lavar.png" alt="">
+                <img src="imagens/produtos-de-higiene.png" alt="">
                 <h2>Qualidade na lavagem</h2>
                 <p>Usamos os melhores produtos do mercado</p>
             </div>
@@ -80,23 +80,50 @@
         </div>
     </section>
 
-    <section class="contato">
-        <div class="cabecalho">
-            <h2>Entre em contato</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-        <div class="conteudo">
-            <div class="contatoInfo">
-                <h3>Contatos</h3>
-                <div class="contatoInfoBx">
-                    <div class="icon"></div>
-                    <div class="informacoes">
-                        <h3>Endereço</h3>
+
+    <!DOCTYPE html>
+<html lang="pt-br">
+ 
+<head>
+    <title>rodapé</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+ 
+<body>
+ 
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                   
+                    <ul>
+                        <li><a href="https://www.google.com/intl/pt-BR/gmail/about/">contato</a></li>
+                    </ul>
+                </div>
+               
+               
+                <div class="footer-col">
+                    <h4>Redes socias</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/?locale=pt_BR"><i class="fab fa-facebook-f"></i></a>
+                        <a
+                            href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoicHQifQ%3D%3D%22%7D"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/lavanderianossaaliada1/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.whatsapp.com/?lang=pt_BR"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </footer>
+ 
+</body>
+ 
+</html>
     <script src="js/projeto.js"></script>
 </body>
 </html>
